@@ -1,0 +1,24 @@
+{
+  "name": "video-brand-toolkit",
+  "owner": {
+    "name": "Le Duy Hien",
+    "email": "leduyhien123@gmail.com"
+  },
+  "metadata": {
+    "description": "3 skill dựng video AI xây thương hiệu cá nhân — từ ý tưởng thô đến prompt sẵn dùng cho Google Flow + Google AI Studio",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "video-brand-skills",
+      "description": "Viết kịch bản từ ý tưởng thô, review kịch bản đa góc nhìn, sinh prompt ảnh/video/audio",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/video-idea-to-script",
+        "./skills/review-kich-ban-video-ngan",
+        "./skills/video-prompt-hub"
+      ]
+    }
+  ]
+}
