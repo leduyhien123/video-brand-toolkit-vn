@@ -1,16 +1,16 @@
 ---
-name: video-prompt-hub
+name: story-prompt-hub
 description: >
   Biến kịch bản video đã review xong thành prompt sẵn dùng cho Google Flow
   (storyboard + video) và Google AI Studio (audio TTS), giữ nhất quán nhân
   vật/bối cảnh xuyên suốt nhiều cảnh. Dùng skill này khi người dùng đã có 1
-  bảng cảnh đã chốt (qua skill `video-idea-to-script` + `review-kich-ban-video-ngan`,
+  bảng cảnh đã chốt (qua skill `story-idea` + `story-review`,
   hoặc tự viết tương đương) và muốn "sinh prompt", "tạo prompt cho Flow/Veo",
   "làm audio TTS", "chuyển kịch bản thành prompt ảnh/video/audio". Giả định
   ảnh nhân vật + bối cảnh cố định đã được tạo sẵn trên Google Flow (làm
   Reference khi tạo ảnh/video từng cảnh) — việc tạo ảnh nhân vật gốc không
   thuộc skill này. KHÔNG dùng skill này để viết hoặc review kịch bản — đó là
-  việc của `video-idea-to-script` và `review-kich-ban-video-ngan`.
+  việc của `story-idea` và `story-review`.
 ---
 
 # Claude thành Prompt Hub
@@ -21,7 +21,7 @@ description: >
 
 Trước khi bắt đầu Giai đoạn 1, kịch bản dùng xuyên suốt phải là bản **đã chốt** (đã qua review, không còn thay đổi). Không sửa lời thoại giữa chừng sau khi đã generate bất kỳ giai đoạn nào — video lip-sync ở Giai đoạn 2 ước lượng khẩu hình theo đúng text lúc đó; sửa câu chữ sau ở Giai đoạn 3 sẽ làm khẩu hình lệch với audio thật khi ghép ở bước dựng. Muốn sửa chữ thì phải sửa lại kịch bản gốc và chạy lại cả 3 giai đoạn.
 
-Nếu người dùng chưa có bảng cảnh đã chốt, đề nghị chạy qua `video-idea-to-script` rồi `review-kich-ban-video-ngan` trước — không tự bịa bảng cảnh để chạy tiếp.
+Nếu người dùng chưa có bảng cảnh đã chốt, đề nghị chạy qua `story-idea` rồi `story-review` trước — không tự bịa bảng cảnh để chạy tiếp.
 
 ## Giai đoạn 1 — Prompt cho Storyboard Studio (Google Flow)
 
@@ -40,8 +40,8 @@ Theo đúng khuôn 4 dòng và quy tắc rẽ nhánh lip-sync/voiceover trong `r
 
 Không tạo riêng từng cảnh — để giọng nói đồng nhất suốt video. Một prompt gồm:
 
-1. **Audio Profile** — giọng nhân vật từ persona đã xác nhận ở `video-idea-to-script`. Nếu dùng Gemini TTS, chọn theo voice list thật trong `references/gemini-tts-reference.md`.
-2. **Director's Note** — ưu tiên lấy từ góc "Đạo diễn lồng tiếng" của `review-kich-ban-video-ngan` nếu có. **Nếu góc đó bị bỏ qua** (kịch bản gốc không có style tag) → tự tổng hợp nhịp/cảm xúc từ persona + nội dung từng cảnh, và **nêu rõ đây là suy luận**, không để trống âm thầm.
+1. **Audio Profile** — giọng nhân vật từ persona đã xác nhận ở `story-idea`. Nếu dùng Gemini TTS, chọn theo voice list thật trong `references/gemini-tts-reference.md`.
+2. **Director's Note** — ưu tiên lấy từ góc "Đạo diễn lồng tiếng" của `story-review` nếu có. **Nếu góc đó bị bỏ qua** (kịch bản gốc không có style tag) → tự tổng hợp nhịp/cảm xúc từ persona + nội dung từng cảnh, và **nêu rõ đây là suy luận**, không để trống âm thầm.
 3. Toàn bộ lời thoại nối theo đúng thứ tự kịch bản, dùng `<long pause>` giữa các cảnh để phân biệt ranh giới (xem `references/gemini-tts-reference.md` — đây là tag hợp lệ model nhận dạng được, không dùng ký hiệu tự chế như `[Scene 1]`).
 
 Luôn nhắc người dùng nghe thử và tinh chỉnh lại sau khi tạo — xem phần "Giới hạn cần biết" trong `references/gemini-tts-reference.md`.

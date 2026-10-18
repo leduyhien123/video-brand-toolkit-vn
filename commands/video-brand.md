@@ -13,11 +13,11 @@ Chạy quy trình dựng video AI cho thương hiệu cá nhân, từ ý tưởn
 
 ## Process
 1. Kích hoạt Video Brand Agent
-2. Bước 1 — skill `video-idea-to-script`: nhận ý tưởng thô, xác nhận persona, đề xuất hướng, checkpoint, dựng bảng cảnh
+2. Bước 1 — skill `story-idea`: nhận ý tưởng thô, xác nhận persona, đề xuất hướng, checkpoint, dựng bảng cảnh
 3. Hỏi xác nhận trước khi qua Bước 2
-4. Bước 2 — skill `review-kich-ban-video-ngan`: review 4 góc nhìn, hỏi rewrite 1 lần ở cuối
+4. Bước 2 — skill `story-review`: review 4 góc nhìn, hỏi rewrite 1 lần ở cuối
 5. Hỏi xác nhận trước khi qua Bước 3
-6. Bước 3 — skill `video-prompt-hub`: sinh prompt theo 3 giai đoạn (storyboard → video → audio)
+6. Bước 3 — skill `story-prompt-hub`: sinh prompt theo 3 giai đoạn (storyboard → video → audio)
 
 ## Examples
 - `/video-brand nhiều người tiết kiệm sai cách` — Chạy full pipeline từ ý tưởng thô

@@ -1,5 +1,5 @@
 ---
-name: video-idea-to-script
+name: story-idea
 description: >
   Chuyển ý tưởng thô cho video ngắn (1 câu, ghi chú rời rạc, thoại chưa gọt,
   link/insight nhặt được — bất kỳ dạng nào) thành kịch bản có cấu trúc đầy đủ
@@ -9,8 +9,8 @@ description: >
   video còn thô và muốn "viết kịch bản", "lên script", "triển khai ý tưởng
   thành video", "bắt đầu làm video AI cho thương hiệu cá nhân". KHÔNG dùng
   skill này để review/chấm kịch bản đã có sẵn — đó là việc của skill
-  review-kich-ban-video-ngan. KHÔNG dùng để sinh prompt ảnh/video/audio cho
-  Google Flow hay Google AI Studio — đó là việc của skill video-prompt-hub.
+  story-review. KHÔNG dùng để sinh prompt ảnh/video/audio cho
+  Google Flow hay Google AI Studio — đó là việc của skill story-prompt-hub.
 ---
 
 # Từ ý tưởng thô đến kịch bản có cấu trúc
@@ -69,8 +69,8 @@ CTA luôn bắt buộc có mặt ở cả 3 mục tiêu, chỉ khác loại:
 
 Pacing lời thoại theo định dạng/độ dài đã khai ở Bước 2 (tiếng Việt ước lượng ~2.5-3 từ/giây).
 
-**Quy ước cột Visual:** chỉ mô tả footage thật — hành động, biểu cảm, góc máy của nhân vật/bối cảnh sẽ xuất hiện trên khung hình. Không mô tả đồ họa/overlay dựng thêm sau (biểu đồ, hoạt hình chữ, icon minh họa) ngay trong phần mô tả footage. Nếu 1 cảnh cần thêm overlay dạng đó, ghi riêng ở cuối ô Visual trong ngoặc vuông, ví dụ: `[overlay: đồ thị năng lượng tụt dần]` — để skill `video-prompt-hub` biết phân biệt phần cần sinh prompt video thật với phần sẽ xử lý riêng ở bước dựng (Capcut).
+**Quy ước cột Visual:** chỉ mô tả footage thật — hành động, biểu cảm, góc máy của nhân vật/bối cảnh sẽ xuất hiện trên khung hình. Không mô tả đồ họa/overlay dựng thêm sau (biểu đồ, hoạt hình chữ, icon minh họa) ngay trong phần mô tả footage. Nếu 1 cảnh cần thêm overlay dạng đó, ghi riêng ở cuối ô Visual trong ngoặc vuông, ví dụ: `[overlay: đồ thị năng lượng tụt dần]` — để skill `story-prompt-hub` biết phân biệt phần cần sinh prompt video thật với phần sẽ xử lý riêng ở bước dựng (Capcut).
 
 ## Output cuối & chuyển bước
 
-Trả về 1 bảng cảnh hoàn chỉnh. Sau khi giao bảng cảnh, hỏi ngắn người dùng có muốn chuyển sang **review đa góc nhìn** (skill `review-kich-ban-video-ngan`) ngay không — đừng tự chuyển mà không hỏi, vì người dùng có thể muốn tự đọc lại trước.
+Trả về 1 bảng cảnh hoàn chỉnh. Sau khi giao bảng cảnh, hỏi ngắn người dùng có muốn chuyển sang **review đa góc nhìn** (skill `story-review`) ngay không — đừng tự chuyển mà không hỏi, vì người dùng có thể muốn tự đọc lại trước.

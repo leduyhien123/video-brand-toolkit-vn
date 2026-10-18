@@ -9,5 +9,5 @@ Arguments: $ARGUMENTS
 
 Follow the full process defined in that command file:
 1. Read `commands/story-review.md` for the command spec
-2. Read `skills/review-kich-ban-video-ngan/SKILL.md` for the skill instructions
+2. Read `skills/story-review/SKILL.md` for the skill instructions
 3. Execute the command and deliver the output

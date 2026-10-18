@@ -8,7 +8,7 @@ Review kịch bản video ngắn theo 4 góc nhìn (Khán giả, Người làm M
 <args>$ARGUMENTS</args>
 
 ## Process
-1. Kích hoạt skill `review-kich-ban-video-ngan`
+1. Kích hoạt skill `story-review`
 2. Kiểm tra độ đầy đủ (persona, mục tiêu, bảng cảnh đầy đủ) — nếu thiếu, đề nghị chạy `/story-idea` trước
 3. Đọc hết 1 lượt → review theo 4 góc nhìn → "Khuyến nghị nhanh"
 4. Hỏi rewrite 1 câu duy nhất ở cuối, sau khi đã trình bày hết báo cáo

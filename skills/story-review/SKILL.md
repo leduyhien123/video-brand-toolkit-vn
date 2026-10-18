@@ -1,5 +1,5 @@
 ---
-name: review-kich-ban-video-ngan
+name: story-review
 description: >
   Review kịch bản video ngắn (Reels/TikTok/Shorts) bằng cách đóng vai nhiều
   góc nhìn khác nhau (người xem, chuyên gia marketing, đạo diễn lồng tiếng,
@@ -12,25 +12,25 @@ description: >
   kiến, không nhất thiết phải là full kịch bản, và kể cả khi họ không gõ
   đúng từ "review". Chạy độc lập được, không bắt buộc phải nối tiếp từ skill
   nào khác. KHÔNG dùng skill này để tự soạn kịch bản mới từ đầu — đó là việc
-  của skill `video-idea-to-script`; skill này chỉ review kịch bản đã có sẵn.
+  của skill `story-idea`; skill này chỉ review kịch bản đã có sẵn.
 ---
 
 # Review kịch bản video ngắn
 
 Bạn đóng vai một hội đồng nhỏ nhiều góc nhìn để review kịch bản video ngắn — không chỉ chê hay khen chung chung, mà chỉ ra đúng câu/cảnh có vấn đề và vì sao nó là vấn đề với từng loại người đọc khác nhau.
 
-## Bước 0 — Kiểm tra độ đầy đủ, điều hướng về video-idea-to-script nếu thiếu
+## Bước 0 — Kiểm tra độ đầy đủ, điều hướng về story-idea nếu thiếu
 
-**Nếu nối tiếp skill `video-idea-to-script` trong cùng phiên làm việc:** dùng lại persona/tông giọng, mục tiêu video, và bảng cảnh đã có — không hỏi lại.
+**Nếu nối tiếp skill `story-idea` trong cùng phiên làm việc:** dùng lại persona/tông giọng, mục tiêu video, và bảng cảnh đã có — không hỏi lại.
 
-**Nếu người dùng dán kịch bản độc lập (không chạy qua `video-idea-to-script` trong phiên này):** đối chiếu kịch bản với 3 thành phần tương đương đầu ra của skill đó, trước khi quyết định có review ngay hay không:
+**Nếu người dùng dán kịch bản độc lập (không chạy qua `story-idea` trong phiên này):** đối chiếu kịch bản với 3 thành phần tương đương đầu ra của skill đó, trước khi quyết định có review ngay hay không:
 
 1. **Persona/tông giọng nhân vật** — có nêu rõ, hoặc suy ra chắc chắn từ style tag/lời thoại nhất quán trong kịch bản không.
 2. **Mục tiêu video** — bán hàng/convert, xây kênh cá nhân/thương hiệu, hay giải trí/educate thuần có rõ không. Việc này quyết định CTA có bắt buộc phải có không, và liệu một đoạn "bán hàng" có đáng bị trừ điểm vì phá mạch hay không.
 3. **Bảng cảnh đầy đủ** — đã ở dạng Scene/Dialogue/Visual/Text overlay theo mạch Hook → Insight → Payoff → CTA (hoặc tương đương), không còn là ý tưởng thô/outline rời rạc.
 
-- **Đủ cả 3** (dù tự viết tay hay đã qua `video-idea-to-script`) → tiến hành review ngay từ Bước 1, không hỏi lại.
-- **Thiếu một trong 3** → không tự đoán/giả định để lấp đầy. Đề nghị người dùng chạy qua skill `video-idea-to-script` trước, nói rõ cụ thể đang thiếu gì và vì sao thiếu nó làm review kém chính xác (ví dụ: "kịch bản chưa nói rõ mục tiêu video nên chưa biết CTA thiếu là lỗi hay chủ ý"). Nếu người dùng vẫn muốn review ngay dù thiếu, tôn trọng lựa chọn đó — khi đó tự suy ra giả định cho phần còn thiếu và nói rõ giả định trong phần đánh giá để người dùng điều chỉnh nếu đoán sai.
+- **Đủ cả 3** (dù tự viết tay hay đã qua `story-idea`) → tiến hành review ngay từ Bước 1, không hỏi lại.
+- **Thiếu một trong 3** → không tự đoán/giả định để lấp đầy. Đề nghị người dùng chạy qua skill `story-idea` trước, nói rõ cụ thể đang thiếu gì và vì sao thiếu nó làm review kém chính xác (ví dụ: "kịch bản chưa nói rõ mục tiêu video nên chưa biết CTA thiếu là lỗi hay chủ ý"). Nếu người dùng vẫn muốn review ngay dù thiếu, tôn trọng lựa chọn đó — khi đó tự suy ra giả định cho phần còn thiếu và nói rõ giả định trong phần đánh giá để người dùng điều chỉnh nếu đoán sai.
 
 Ngoài ra, xác định **nền tảng & độ dài** và **định dạng input** — bảng cảnh, ảnh chụp bảng, kịch bản TTS có `[style: ...]` + `<pause>`, hay chỉ text thô. Định dạng input quyết định những góc nhìn nào ở Bước 2 áp dụng được.
 

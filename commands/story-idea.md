@@ -8,7 +8,7 @@ Chuyển ý tưởng video thô thành kịch bản có cấu trúc đầy đủ
 <args>$ARGUMENTS</args>
 
 ## Process
-1. Kích hoạt skill `video-idea-to-script`
+1. Kích hoạt skill `story-idea`
 2. Nhận ý tưởng thô → xác nhận persona (tông giọng theo cặp, nền tảng/độ dài, mục tiêu) → đề xuất 2-3 hướng khai triển → checkpoint xác nhận → dựng bảng cảnh đầy đủ
 3. Output: 1 bảng cảnh (Scene/Dialogue/Visual/Text overlay), hỏi có muốn chuyển sang `/story-review` ngay không
 

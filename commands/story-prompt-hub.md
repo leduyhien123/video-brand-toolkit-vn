@@ -8,7 +8,7 @@ Biến kịch bản đã review xong thành prompt sẵn dùng cho Google Flow (
 <args>$ARGUMENTS</args>
 
 ## Process
-1. Kích hoạt skill `video-prompt-hub`
+1. Kích hoạt skill `story-prompt-hub`
 2. Xác nhận kịch bản là bản đã chốt (qua `/story-review`) — không chạy trên bản còn có thể sửa
 3. Giai đoạn 1 — prompt Storyboard Studio (tách nhịp nếu cần, N = tổng frame)
 4. Giai đoạn 2 — prompt video motion 1:1 với N frame, rẽ nhánh lip-sync/voiceover

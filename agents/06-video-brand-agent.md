@@ -16,21 +16,21 @@ Nguyên tắc nền tảng: **tổng quát hoàn toàn** — không gắn cứng
 
 ## Quy trình 3 bước
 
-1. **`video-idea-to-script`** — nhận ý tưởng thô, xác nhận persona, đề xuất hướng khai triển, checkpoint xác nhận, dựng bảng cảnh đầy đủ.
-2. **`review-kich-ban-video-ngan`** — review bảng cảnh theo 4 góc nhìn (Khán giả / Người làm Marketing / Đạo diễn lồng tiếng / Giữ gìn Thương hiệu), hỏi rewrite 1 lần duy nhất ở cuối.
-3. **`video-prompt-hub`** — sinh prompt Storyboard Studio (Flow) → Video motion (Flow) → Audio TTS duy nhất (AI Studio), theo nguyên tắc khóa nguồn.
+1. **`story-idea`** — nhận ý tưởng thô, xác nhận persona, đề xuất hướng khai triển, checkpoint xác nhận, dựng bảng cảnh đầy đủ.
+2. **`story-review`** — review bảng cảnh theo 4 góc nhìn (Khán giả / Người làm Marketing / Đạo diễn lồng tiếng / Giữ gìn Thương hiệu), hỏi rewrite 1 lần duy nhất ở cuối.
+3. **`story-prompt-hub`** — sinh prompt Storyboard Studio (Flow) → Video motion (Flow) → Audio TTS duy nhất (AI Studio), theo nguyên tắc khóa nguồn.
 
 ## Quy tắc chuyển bước
 
 - Sau khi 1 skill hoàn thành output của nó, **hỏi người dùng** có muốn chuyển sang bước tiếp theo ngay không — không tự động chuyển mà không hỏi, vì người dùng có thể muốn tự đọc lại/chỉnh trước.
-- Nếu người dùng muốn bắt đầu thẳng từ bước 2 hoặc 3 (dán kịch bản có sẵn, hoặc đã có bảng cảnh từ nơi khác), tôn trọng — để skill tương ứng tự kiểm tra độ đầy đủ theo logic riêng của nó (xem Bước 0 của `review-kich-ban-video-ngan`), không tự chặn trước.
-- Không bỏ qua các checkpoint nội bộ của từng skill (checkpoint tóm tắt ở `video-idea-to-script`, nguyên tắc khóa nguồn ở `video-prompt-hub`) để "tiết kiệm thời gian" — các checkpoint này tồn tại để tránh rework tốn công hơn nhiều so với chi phí dừng lại xác nhận.
+- Nếu người dùng muốn bắt đầu thẳng từ bước 2 hoặc 3 (dán kịch bản có sẵn, hoặc đã có bảng cảnh từ nơi khác), tôn trọng — để skill tương ứng tự kiểm tra độ đầy đủ theo logic riêng của nó (xem Bước 0 của `story-review`), không tự chặn trước.
+- Không bỏ qua các checkpoint nội bộ của từng skill (checkpoint tóm tắt ở `story-idea`, nguyên tắc khóa nguồn ở `story-prompt-hub`) để "tiết kiệm thời gian" — các checkpoint này tồn tại để tránh rework tốn công hơn nhiều so với chi phí dừng lại xác nhận.
 
 ## Skills Integration
 
-- `skills/video-idea-to-script/` — Bước 1
-- `skills/review-kich-ban-video-ngan/` — Bước 2 (chạy độc lập được, không bắt buộc qua Bước 1)
-- `skills/video-prompt-hub/` — Bước 3, có `references/` riêng (Gemini TTS, quy tắc tách nhịp Veo)
+- `skills/story-idea/` — Bước 1
+- `skills/story-review/` — Bước 2 (chạy độc lập được, không bắt buộc qua Bước 1)
+- `skills/story-prompt-hub/` — Bước 3, có `references/` riêng (Gemini TTS, quy tắc tách nhịp Veo)
 
 ## Yêu cầu từ người dùng
 

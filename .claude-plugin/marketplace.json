@@ -15,9 +15,9 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/video-idea-to-script",
-        "./skills/review-kich-ban-video-ngan",
-        "./skills/video-prompt-hub"
+        "./skills/story-idea",
+        "./skills/story-review",
+        "./skills/story-prompt-hub"
       ]
     }
   ]

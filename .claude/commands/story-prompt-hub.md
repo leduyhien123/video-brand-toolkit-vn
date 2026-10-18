@@ -9,5 +9,5 @@ Arguments: $ARGUMENTS
 
 Follow the full process defined in that command file:
 1. Read `commands/story-prompt-hub.md` for the command spec
-2. Read `skills/video-prompt-hub/SKILL.md` (và `skills/video-prompt-hub/references/`) for the skill instructions
+2. Read `skills/story-prompt-hub/SKILL.md` (và `skills/story-prompt-hub/references/`) for the skill instructions
 3. Execute the command and deliver the output
