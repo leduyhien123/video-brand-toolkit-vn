@@ -16,14 +16,14 @@
 ## Cài đặt trên claude.ai (web/app)
 
 1. Mở **Customize** ở sidebar → **Plugins**
-2. Chọn **Add marketplace**, dán URL repo này: `https://github.com/<owner>/<repo>`
+2. Chọn **Add marketplace**, dán URL repo này: `https://github.com/leduyhien123/video-brand-toolkit-vn`
 3. 3 skill sẽ hiện trong danh sách — bấm cài đặt
 4. Bắt đầu chat bình thường: mô tả ý tưởng video, Claude sẽ tự nhận diện và dùng đúng skill (hoặc gõ rõ "viết kịch bản cho ý tưởng: ..." để chắc chắn kích hoạt `video-idea-to-script`)
 
 ## Cài đặt trên Claude Code (tùy chọn, cho người dùng kỹ thuật)
 
 ```bash
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add leduyhien123/video-brand-toolkit-vn
 ```
 
 Repo này còn có sẵn lệnh riêng cho Claude Code (`agents/`, `commands/`, `.claude/commands/`):
