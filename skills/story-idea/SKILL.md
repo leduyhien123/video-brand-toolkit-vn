@@ -57,6 +57,8 @@ Sau khi người dùng chọn 1 hướng, **tóm tắt 3-4 dòng**: hook cụ th
 
 ## Bước 4 — Triển khai đầy đủ thành bảng cảnh
 
+**Tiêu đề video:** Ngay trên đầu output, trước bảng cảnh, luôn thêm 1 dòng **Tiêu đề** viết dưới dạng Hook — 1 câu ngắn gọn, đúng tinh thần hướng đã chọn ở Bước 3, dùng để đặt tên/nhận diện video (ví dụ đặt tên file, nhắc trong thư mục lưu trữ). Tiêu đề này có thể trùng hoặc gần giống câu hook mở đầu ở Scene 1, miễn giữ đúng tinh thần hướng đã chọn.
+
 Dựng kịch bản theo khung: **Hook → Nỗi đau/Vấn đề (Agitate) → Insight/Giải pháp → Payoff → CTA**. Output là 1 bảng gồm 4 cột: **Scene / Dialogue / Visual / Text overlay**.
 
 CTA luôn bắt buộc có mặt ở cả 3 mục tiêu, chỉ khác loại:

@@ -23,18 +23,28 @@ Trước khi bắt đầu Giai đoạn 1, kịch bản dùng xuyên suốt phả
 
 Nếu người dùng chưa có bảng cảnh đã chốt, đề nghị chạy qua `story-idea` rồi `story-review` trước — không tự bịa bảng cảnh để chạy tiếp.
 
+## Cách trình bày — từng giai đoạn một, chờ xác nhận
+
+Không tạo prompt cho cả 3 giai đoạn trong 1 lần trả lời. Trình tự bắt buộc:
+
+1. Tạo xong Giai đoạn 1 → đưa cho người dùng → hỏi xác nhận có muốn tiếp tục sang Giai đoạn 2 không.
+2. Khi được xác nhận, tạo Giai đoạn 2 → đưa cho người dùng → hỏi xác nhận có muốn tiếp tục sang Giai đoạn 3 không.
+3. Khi được xác nhận, tạo Giai đoạn 3 → đưa cho người dùng → kết thúc bằng thông báo: **"Đã kết thúc quy trình trên Claude."**
+
+Không tự chạy nối tiếp các giai đoạn mà không hỏi — người dùng cần thời gian copy/dán từng prompt vào Flow/AI Studio trước khi quay lại lấy prompt tiếp theo.
+
 ## Giai đoạn 1 — Prompt cho Storyboard Studio (Google Flow)
 
 Chỉ sinh prompt dùng công cụ Storyboard Studio có sẵn trong Flow. Việc tạo ảnh nhân vật/bối cảnh gốc đã có hướng dẫn riêng ngoài phạm vi skill này.
 
 1. **Xác định điểm tách nhịp** — xem `references/veo-clip-splitting-guide.md`. Với mỗi cảnh trong bảng đã chốt, kiểm tra có nhiều hơn 1 "nhịp hình" riêng biệt không (Veo chỉ animate 1 frame tĩnh/lần). Nếu có, tách thành frame con, đặt tên `03a/03b`, `06a/06b/06c`... Nếu không, giữ 1 frame = 1 cảnh.
-2. **Sinh prompt cho MỖI FRAME sau khi tách** — N = tổng số frame cuối cùng, không phải số dòng cảnh gốc. Mỗi prompt gồm: khối neo tổng quát (nhắc ngắn ai, bối cảnh chung, phong cách hình ảnh — không tả lại chi tiết ngoại hình vì ảnh Reference đã đảm nhiệm phần đó) + mô tả riêng của frame này (góc máy, hành động, biểu cảm, ánh sáng/khung cảnh cụ thể).
+2. **Gộp thành 1 prompt duy nhất cho toàn bộ storyboard** — không tách thành nhiều prompt riêng theo từng frame, vì người dùng chỉ copy 1 đoạn duy nhất dán vào Storyboard Studio. Trong cùng 1 đoạn prompt: nêu khối neo tổng quát (ai, bối cảnh chung, phong cách hình ảnh — không tả lại chi tiết ngoại hình vì ảnh Reference đã đảm nhiệm phần đó) **1 lần duy nhất ở đầu**, sau đó liệt kê lần lượt từng frame theo đúng thứ tự (kể cả frame đã tách nhịp), mỗi frame có nhãn ngắn bằng tiếng Việt (ví dụ "CẢNH 1 — MỞ ĐẦU", "CẢNH 3A — ĐỨNG DẬY UỐNG NƯỚC") rồi đến mô tả riêng của frame đó (góc máy, hành động, biểu cảm, ánh sáng/khung cảnh cụ thể).
 
-**Nếu cột Visual có đánh dấu `[overlay: ...]`:** đó là đồ họa dựng thêm ở bước dựng (Capcut), không phải footage — không đưa phần trong ngoặc vuông vào prompt Storyboard Studio, chỉ dùng phần mô tả footage thật đứng trước nó.
+**Nếu cột Visual có đánh dấu `[overlay: ...]`:** đó là đồ họa dựng thêm ở bước dựng (Capcut), không phải footage — không đưa phần trong ngoặc vuông vào prompt, chỉ dùng phần mô tả footage thật đứng trước nó.
 
 ## Giai đoạn 2 — Prompt Video motion (1:1 với N frame ở Giai đoạn 1)
 
-Theo đúng khuôn 4 dòng và quy tắc rẽ nhánh lip-sync/voiceover trong `references/veo-clip-splitting-guide.md`: `MOTION → CAMERA → DIALOGUE → AUDIO`, AUDIO luôn có mặt (không để trống).
+Khác với Giai đoạn 1 — mỗi frame vẫn là **1 prompt riêng** (không gộp), vì mỗi prompt video được tạo và tải riêng trên Flow. Mỗi prompt bắt đầu bằng 1 dòng nhãn tên cảnh bằng tiếng Việt, cùng quy ước đặt tên như Giai đoạn 1 (ví dụ "CẢNH 1 — MỞ ĐẦU", "CẢNH 3A — ĐỨNG DẬY UỐNG NƯỚC"), để người dùng dễ theo dõi đang ở cảnh nào. Sau đó theo đúng khuôn 4 dòng và quy tắc rẽ nhánh lip-sync/voiceover trong `references/veo-clip-splitting-guide.md`: `MOTION → CAMERA → DIALOGUE → AUDIO`, AUDIO luôn có mặt (không để trống).
 
 ## Giai đoạn 3 — 1 prompt Audio TTS duy nhất cho toàn kịch bản
 
@@ -48,6 +58,8 @@ Luôn nhắc người dùng nghe thử và tinh chỉnh lại sau khi tạo — 
 
 ## Output cuối
 
-- Giai đoạn 1: N prompt ảnh/storyboard (1 cho mỗi frame sau khi tách nhịp)
-- Giai đoạn 2: N prompt video (1:1 với Giai đoạn 1, rẽ nhánh lip-sync/voiceover)
+- Giai đoạn 1: 1 prompt tổng hợp duy nhất, chứa tất cả frame đã tách nhịp (gắn nhãn tiếng Việt), dán 1 lần vào Storyboard Studio
+- Giai đoạn 2: N prompt video riêng (1:1 với số frame ở Giai đoạn 1), mỗi prompt có nhãn tên cảnh tiếng Việt, rẽ nhánh lip-sync/voiceover
 - Giai đoạn 3: 1 prompt audio duy nhất cho cả kịch bản, có `<long pause>` đánh dấu ranh giới cảnh để cắt khi dựng
+
+Mỗi giai đoạn trình bày riêng, chờ xác nhận mới sang giai đoạn tiếp theo (xem "Cách trình bày" ở trên) — kết thúc bằng thông báo "Đã kết thúc quy trình trên Claude." sau khi giao xong Giai đoạn 3.
