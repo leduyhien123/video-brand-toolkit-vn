@@ -12,15 +12,17 @@ Cảnh gốc đánh số theo bảng cảnh (Scene 01, 02, 03...). Khi 1 cảnh 
 
 **N ở Giai đoạn 1 (tổng số prompt ảnh/storyboard) phải bằng tổng số frame SAU KHI đã tách — không phải số dòng trong bảng cảnh gốc.** Giai đoạn 2 (prompt video) sinh 1:1 theo đúng N này.
 
-## Khuôn 4 dòng cho prompt video (Giai đoạn 2)
+## Khuôn cho mỗi clip (Giai đoạn 2)
 
-Mỗi clip viết theo đúng khuôn:
+Mỗi clip viết theo đúng khuôn, bắt đầu bằng dòng nhãn `CLIP <id> — [Tên Nhãn]` (id khớp đúng với tên frame đã đặt ở Giai đoạn 1, ví dụ `05b`; Tên Nhãn là mô tả ngắn bằng tiếng Việt):
 
 ```
+CLIP <id> — [Tên Nhãn]
 MOTION: <chuyển động từ frame tĩnh — hành động, biểu cảm, thay đổi gì trong khung hình>
 CAMERA: <loại chuyển động camera — tĩnh/pan/push-in/zoom...>
 DIALOGUE: <lời thoại của clip này, ghi rõ loại — xem bên dưới>
 AUDIO: <âm thanh nền của clip — luôn phải có, kể cả khi chỉ là "tiếng phòng tự nhiên, không nhạc">
+DURATION: <số giây ước lượng cho clip này — dựa theo độ dài lời thoại (pacing ~2.5-3 từ/giây tiếng Việt) nếu có DIALOGUE, hoặc độ dài hành động nếu là clip không thoại. Kiểm tra lại với giới hạn thời lượng/clip mà Google Flow đang cho phép trước khi dán, vì giới hạn này có thể thay đổi theo phiên bản>
 ```
 
 Không thêm mô tả ngoại hình/bối cảnh trong prompt video — frame tĩnh ở Giai đoạn 1 đã quyết định việc đó.

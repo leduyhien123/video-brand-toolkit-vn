@@ -44,7 +44,7 @@ Chỉ sinh prompt dùng công cụ Storyboard Studio có sẵn trong Flow. Việ
 
 ## Giai đoạn 2 — Prompt Video motion (1:1 với N frame ở Giai đoạn 1)
 
-Khác với Giai đoạn 1 — mỗi frame vẫn là **1 prompt riêng** (không gộp), vì mỗi prompt video được tạo và tải riêng trên Flow. Mỗi prompt bắt đầu bằng 1 dòng nhãn tên cảnh bằng tiếng Việt, cùng quy ước đặt tên như Giai đoạn 1 (ví dụ "CẢNH 1 — MỞ ĐẦU", "CẢNH 3A — ĐỨNG DẬY UỐNG NƯỚC"), để người dùng dễ theo dõi đang ở cảnh nào. Sau đó theo đúng khuôn 4 dòng và quy tắc rẽ nhánh lip-sync/voiceover trong `references/veo-clip-splitting-guide.md`: `MOTION → CAMERA → DIALOGUE → AUDIO`, AUDIO luôn có mặt (không để trống).
+Khác với Giai đoạn 1 — mỗi frame vẫn là **1 prompt riêng** (không gộp), vì mỗi prompt video được tạo và tải riêng trên Flow. Theo đúng khuôn trong `references/veo-clip-splitting-guide.md`, mỗi prompt bắt đầu bằng dòng nhãn `CLIP <id> — [Tên Nhãn]` (id khớp tên frame ở Giai đoạn 1, ví dụ `05b`; Tên Nhãn ngắn gọn bằng tiếng Việt, ví dụ "ĐỨNG DẬY UỐNG NƯỚC"), sau đó 5 dòng: `MOTION → CAMERA → DIALOGUE → AUDIO → DURATION` (áp dụng quy tắc rẽ nhánh lip-sync/voiceover cho DIALOGUE; AUDIO và DURATION luôn có mặt, không để trống).
 
 ## Giai đoạn 3 — 1 prompt Audio TTS duy nhất cho toàn kịch bản
 
