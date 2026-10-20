@@ -44,7 +44,9 @@ Chỉ sinh prompt dùng công cụ Storyboard Studio có sẵn trong Flow. Việ
 
 ## Giai đoạn 2 — Prompt Video motion (1:1 với N frame ở Giai đoạn 1)
 
-Khác với Giai đoạn 1 — mỗi frame vẫn là **1 prompt riêng** (không gộp), vì mỗi prompt video được tạo và tải riêng trên Flow. Theo đúng khuôn trong `references/veo-clip-splitting-guide.md`, mỗi prompt bắt đầu bằng dòng nhãn `CLIP <id> — [Tên Nhãn]` (id khớp tên frame ở Giai đoạn 1, ví dụ `05b`; Tên Nhãn ngắn gọn bằng tiếng Việt, ví dụ "ĐỨNG DẬY UỐNG NƯỚC"), sau đó 5 dòng: `MOTION → CAMERA → DIALOGUE → AUDIO → DURATION` (áp dụng quy tắc rẽ nhánh lip-sync/voiceover cho DIALOGUE; AUDIO và DURATION luôn có mặt, không để trống).
+Khác với Giai đoạn 1 — mỗi frame vẫn là **1 prompt riêng** (không gộp), vì mỗi prompt video được tạo và tải riêng trên Flow. Theo đúng khuôn trong `references/veo-clip-splitting-guide.md`, mỗi prompt bắt đầu bằng dòng nhãn `CLIP <id> — [Tên Nhãn]` (id khớp tên frame ở Giai đoạn 1, ví dụ `05b`; Tên Nhãn ngắn gọn bằng tiếng Việt), sau đó 5 dòng: `MOTION → CAMERA → DIALOGUE → AUDIO → DURATION`.
+
+**Ngôn ngữ:** viết `MOTION`, `CAMERA`, `AUDIO`, `DURATION` bằng **tiếng Anh** (để Flow/Veo xử lý chính xác hơn) — chỉ `[Tên Nhãn]` và `DIALOGUE` giữ nguyên **tiếng Việt**. **`MOTION` là trường quan trọng nhất** — phải mô tả chi tiết, theo trình tự thời gian, tránh câu chung chung dễ khiến AI tạo sai ý tưởng ban đầu (xem hướng dẫn + ví dụ cụ thể trong `references/veo-clip-splitting-guide.md`). DIALOGUE vẫn áp dụng quy tắc rẽ nhánh lip-sync/voiceover; AUDIO và DURATION luôn có mặt, không để trống.
 
 ## Giai đoạn 3 — 1 prompt Audio TTS duy nhất cho toàn kịch bản
 
